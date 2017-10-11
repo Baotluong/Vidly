@@ -20,6 +20,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -166,10 +168,40 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710101354398_InitialModel.cs" />
+    <Compile Include="Migrations\201710101354398_InitialModel.Designer.cs">
+      <DependentUpon>201710101354398_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710111434560_AddIsToSubscribedToCustomer.cs" />
+    <Compile Include="Migrations\201710111434560_AddIsToSubscribedToCustomer.Designer.cs">
+      <DependentUpon>201710111434560_AddIsToSubscribedToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710111439435_AddMembershipType.cs" />
+    <Compile Include="Migrations\201710111439435_AddMembershipType.Designer.cs">
+      <DependentUpon>201710111439435_AddMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710111441450_PopulateMembershipType.cs" />
+    <Compile Include="Migrations\201710111441450_PopulateMembershipType.Designer.cs">
+      <DependentUpon>201710111441450_PopulateMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710111453125_ApplyAnnotationsToCustomerName.cs" />
+    <Compile Include="Migrations\201710111453125_ApplyAnnotationsToCustomerName.Designer.cs">
+      <DependentUpon>201710111453125_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710111618214_AddNameToMembershipType.cs" />
+    <Compile Include="Migrations\201710111618214_AddNameToMembershipType.Designer.cs">
+      <DependentUpon>201710111618214_AddNameToMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710111620162_UpdateMembershipType.cs" />
+    <Compile Include="Migrations\201710111620162_UpdateMembershipType.Designer.cs">
+      <DependentUpon>201710111620162_UpdateMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -247,6 +279,29 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201710101354398_InitialModel.resx">
+      <DependentUpon>201710101354398_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710111434560_AddIsToSubscribedToCustomer.resx">
+      <DependentUpon>201710111434560_AddIsToSubscribedToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710111439435_AddMembershipType.resx">
+      <DependentUpon>201710111439435_AddMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710111441450_PopulateMembershipType.resx">
+      <DependentUpon>201710111441450_PopulateMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710111453125_ApplyAnnotationsToCustomerName.resx">
+      <DependentUpon>201710111453125_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710111618214_AddNameToMembershipType.resx">
+      <DependentUpon>201710111618214_AddNameToMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710111620162_UpdateMembershipType.resx">
+      <DependentUpon>201710111620162_UpdateMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
