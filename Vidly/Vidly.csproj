@@ -208,6 +208,14 @@
     <Compile Include="Migrations\201710121314268_PopulateGenres.Designer.cs">
       <DependentUpon>201710121314268_PopulateGenres.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710161436036_AddedGenreToDBSet.cs" />
+    <Compile Include="Migrations\201710161436036_AddedGenreToDBSet.Designer.cs">
+      <DependentUpon>201710161436036_AddedGenreToDBSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710161517137_ChangeRequiredInMovieModel.cs" />
+    <Compile Include="Migrations\201710161517137_ChangeRequiredInMovieModel.Designer.cs">
+      <DependentUpon>201710161517137_ChangeRequiredInMovieModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -218,6 +226,8 @@
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\MovieFormViewModel.cs" />
+    <Compile Include="ViewModels\CustomerViewModel.cs" />
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -282,7 +292,9 @@
     <None Include="Views\Customers\Details.cshtml" />
     <None Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Customers\CustomerForm.cshtml" />
     <None Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Movies\MovieForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -324,6 +336,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710121314268_PopulateGenres.resx">
       <DependentUpon>201710121314268_PopulateGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710161436036_AddedGenreToDBSet.resx">
+      <DependentUpon>201710161436036_AddedGenreToDBSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710161517137_ChangeRequiredInMovieModel.resx">
+      <DependentUpon>201710161517137_ChangeRequiredInMovieModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
