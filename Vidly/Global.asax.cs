@@ -17,7 +17,7 @@ namespace Vidly
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles)http://localhost:49333/Global.asax.cs;
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
     }
 }
