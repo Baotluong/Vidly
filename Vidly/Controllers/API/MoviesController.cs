@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
-using Vidly.Models;
-using Vidly.Dtos;
 using AutoMapper;
+using Vidly.Dtos;
+using Vidly.Models;
 
 namespace Vidly.Controllers.API
 {
@@ -20,9 +18,14 @@ namespace Vidly.Controllers.API
         }
 
         // GET /api/movies/
-        public IEnumerable<MovieDto> GetMovies()
+        public IHttpActionResult GetMovies()
         {
-            return _context.Movies.ToList().Select(Mapper.Map<Movie, MovieDto>);
+            var moviesDtos = _context.Movies
+                .Include(m => m.Genre)
+                .ToList()
+                .Select(Mapper.Map<Movie, MovieDto>);
+
+            return Ok(moviesDtos);
         }
 
         // GET /api/movies/1
@@ -37,6 +40,7 @@ namespace Vidly.Controllers.API
 
         // POST /api/movies
         [HttpPost]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public IHttpActionResult CreateMovie(MovieDto movieDto)
         {
             if (!ModelState.IsValid)
@@ -52,6 +56,7 @@ namespace Vidly.Controllers.API
 
         // PUT /api/movies/1
         [HttpPut]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public IHttpActionResult UpdateMovie(int id, MovieDto movieDto)
         {
             if (!ModelState.IsValid)
@@ -69,6 +74,7 @@ namespace Vidly.Controllers.API
 
         // DELETE /api/movies/1
         [HttpDelete]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public IHttpActionResult DeleteMovie(int id)
         {
             var movieInDb = _context.Movies.SingleOrDefault(m => m.Id == id);

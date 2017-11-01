@@ -14,12 +14,15 @@ namespace Vidly.App_Start
         public MappingProfile()
         {
             // TODO why is there 2 lambda expressions. What does the opt refer to?
-            Mapper.CreateMap<Customer, CustomerDto>()
-                .ForMember(c => c.Id, opt => opt.Ignore());
-            Mapper.CreateMap<CustomerDto, Customer>();
+            Mapper.CreateMap<Customer, CustomerDto>();
+            Mapper.CreateMap<Movie, MovieDto>();
+            Mapper.CreateMap<MembershipType, MembershipTypeDto>();
+            Mapper.CreateMap<Genre, GenreDto>();
+
+            Mapper.CreateMap<CustomerDto, Customer>()
+                .ForMember(m => m.Id, opt => opt.Ignore());
             Mapper.CreateMap<MovieDto, Movie>()
                 .ForMember(m => m.Id, opt => opt.Ignore());
-            Mapper.CreateMap<Movie, MovieDto>();
         }
     }
 }
